@@ -3,6 +3,7 @@ import PersonalDetails from "./components/PersonalDetails";
 import ButtonsHeader from "./components/ButtonsHeader";
 import Output from "./components/Output";
 import WorkExperience from "./components/WorkExperience";
+import Education from "./components/Education";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <ButtonsHeader />
         <PersonalDetails />
         <WorkExperience />
-        <div>education</div>
+        <Education />
         <div>skills</div>
       </div>
 
