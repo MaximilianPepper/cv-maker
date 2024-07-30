@@ -1,21 +1,23 @@
-import { useState } from "react";
 import "./App.css";
 import PersonalDetails from "./components/PersonalDetails";
 import ButtonsHeader from "./components/ButtonsHeader";
+import Output from "./components/Output";
+import WorkExperience from "./components/WorkExperience";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="container">
       <div className="inputContainer">
         <ButtonsHeader />
         <PersonalDetails />
-        <div>work experience</div>
+        <WorkExperience />
         <div>education</div>
         <div>skills</div>
       </div>
-      <div className="outputContainer"></div>
+
+      <div className="outputContainer">
+        <Output />
+      </div>
     </div>
   );
 }

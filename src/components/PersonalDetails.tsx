@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import {
   Typography,
   Collapse,
@@ -11,9 +11,11 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import { useDispatch } from "react-redux";
+import { setPersonalDetails } from "../actions/personalInfoActions";
 
 function PersonalDetails() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -22,6 +24,7 @@ function PersonalDetails() {
   const handleToggle = () => {
     setOpen(!open);
   };
+  const dispatch = useDispatch();
 
   // change events
   const changeName = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +43,19 @@ function PersonalDetails() {
     setWebsite(event.target.value);
   };
 
+  const submitPersonalInfo = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = {
+      name,
+      email,
+      phone,
+      location,
+      website,
+    };
+    console.log(data);
+
+    dispatch(setPersonalDetails(data));
+  };
   return (
     <div
       style={{
@@ -76,7 +92,11 @@ function PersonalDetails() {
         </IconButton>
       </Typography>
       <Collapse in={open}>
-        <Box component="form" sx={{ width: "300px", margin: "0 auto", mt: 4 }}>
+        <Box
+          onSubmit={submitPersonalInfo}
+          component="form"
+          sx={{ width: "300px", margin: "0 auto", mt: 4 }}
+        >
           <FormControl component="fieldset" fullWidth>
             <FormGroup>
               <TextField
