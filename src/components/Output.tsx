@@ -1,3 +1,4 @@
+import EducationOutput from "./outputComponents/EducationOutput";
 import ExperienceOutput from "./outputComponents/ExperienceOutput";
 import Header from "./outputComponents/Header";
 
@@ -6,6 +7,7 @@ function Output() {
     <>
       <Header />
       <ExperienceOutput />
+      <EducationOutput />
     </>
   );
 }

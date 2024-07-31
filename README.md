@@ -10,5 +10,4 @@ The goal of this project is to create a cv-maker app.
 
 #### Note
 
-- using company name as key for work experience (do not enter duplicate companies or if possible fix to add an id to created content)
-- also deleting a entry when editing is just a temporary measure
+- add a state fetcher to display template info in each of the form components

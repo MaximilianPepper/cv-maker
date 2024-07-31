@@ -2,8 +2,8 @@ import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { StateInterface } from "../../types";
 
-const ExperienceOutput = () => {
-  const work = useSelector((state: StateInterface) => state.experience);
+const EducationOutput = () => {
+  const education = useSelector((state: StateInterface) => state.education);
   return (
     <Box
       sx={{
@@ -17,13 +17,13 @@ const ExperienceOutput = () => {
       }}
     >
       <Typography variant="h4" sx={{ backgroundColor: "grey", width: "80%" }}>
-        Work Experience
+        Education
       </Typography>
-      {work &&
-        work.map((w) => {
+      {education &&
+        education.map((e) => {
           return (
             <Box
-              key={w.id}
+              key={e.id}
               sx={{
                 display: "flex",
                 flexDirection: "row",
@@ -33,9 +33,9 @@ const ExperienceOutput = () => {
               }}
             >
               <Box sx={{ flex: 1, m: 2 }}>
-                <Typography>{w.endDate && `Ended: ${w.endDate}`}</Typography>
+                <Typography>{e.endDate && `Ended: ${e.endDate}`}</Typography>
                 <Typography>
-                  {w.startDate && `Started: ${w.startDate}`}
+                  {e.startDate && `Started: ${e.startDate}`}
                 </Typography>
               </Box>
               <Box
@@ -46,12 +46,9 @@ const ExperienceOutput = () => {
                 }}
               >
                 <Typography sx={{ textAlign: "left", mt: 1 }} variant="h4">
-                  {w.company}
+                  {e.school}
                 </Typography>
-                <Typography sx={{ textAlign: "left" }}>{w.role}</Typography>
-                <Typography sx={{ textAlign: "left", mt: 1 }}>
-                  {w.description}
-                </Typography>
+                <Typography sx={{ textAlign: "left" }}>{e.degree}</Typography>
               </Box>
             </Box>
           );
@@ -60,4 +57,4 @@ const ExperienceOutput = () => {
   );
 };
 
-export default ExperienceOutput;
+export default EducationOutput;
