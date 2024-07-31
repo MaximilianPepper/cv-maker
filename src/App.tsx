@@ -4,6 +4,7 @@ import ButtonsHeader from "./components/ButtonsHeader";
 import Output from "./components/Output";
 import WorkExperience from "./components/WorkExperience";
 import Education from "./components/Education";
+import { Paper } from "@mui/material";
 
 function App() {
   return (
@@ -16,9 +17,15 @@ function App() {
         <div>skills</div>
       </div>
 
-      <div className="outputContainer">
+      <Paper
+        elevation={9}
+        sx={{
+          flex: 2,
+          height: "1445px",
+        }}
+      >
         <Output />
-      </div>
+      </Paper>
     </div>
   );
 }

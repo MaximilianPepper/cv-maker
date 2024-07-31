@@ -1,4 +1,4 @@
-import { SET_EXPERIENCE } from "../actions/experienceActions";
+import { SET_PERSONAL_DETAILS } from "../actions/personalInfoActions";
 import { PersonalDetailsInterface } from "../types";
 
 const initialState = {
@@ -14,7 +14,8 @@ const personalInfoReducer = (
   action: { type: string; payload: PersonalDetailsInterface }
 ) => {
   switch (action.type) {
-    case SET_EXPERIENCE:
+    case SET_PERSONAL_DETAILS:
+      console.log(action.payload);
       return action.payload;
 
     default:

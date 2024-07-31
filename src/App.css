@@ -14,4 +14,14 @@
 .outputContainer {
   flex: 2;
   border: 2px solid black;
+  height: 1445px;
+}
+
+.header {
+  background-color: rgb(89, 129, 161);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

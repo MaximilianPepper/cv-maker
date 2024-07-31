@@ -1,9 +1,13 @@
-import { useSelector } from "react-redux";
-import { StateInterface } from "../types";
+import ExperienceOutput from "./outputComponents/ExperienceOutput";
+import Header from "./outputComponents/Header";
 
 function Output() {
-  const header = useSelector((state: StateInterface) => state.personalInfo);
-  return <div>{header.name}</div>;
+  return (
+    <>
+      <Header />
+      <ExperienceOutput />
+    </>
+  );
 }
 
 export default Output;
