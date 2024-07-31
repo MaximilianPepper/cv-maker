@@ -11,11 +11,7 @@
 .inputContainer {
   flex: 1;
 }
-.outputContainer {
-  flex: 2;
-  border: 2px solid black;
-  height: 1445px;
-}
+
 
 .header {
   background-color: rgb(89, 129, 161);

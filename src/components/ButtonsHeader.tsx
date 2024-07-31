@@ -4,6 +4,7 @@ import { education, experience, personalInfo } from "../template";
 import { setPersonalDetails } from "../actions/personalInfoActions";
 import { setExperience } from "../actions/experienceActions";
 import { setEducation } from "../actions/educationAction";
+import { useEffect } from "react";
 
 const ButtonsHeader = () => {
   const templateInfo = personalInfo;
@@ -18,6 +19,7 @@ const ButtonsHeader = () => {
   const resetTemplate = () => {
     dispatch({ type: "RESET" });
   };
+  useEffect(() => displayTemplate(), []);
 
   return (
     <Box>
