@@ -1,5 +1,6 @@
 # CV - Maker
 
+[Live Link](https://maximilianpepper.github.io/cv-maker/) </br>
 The goal of this project is to create a cv-maker app.
 
 #### The features i'm aming for are:
