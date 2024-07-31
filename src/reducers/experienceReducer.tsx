@@ -13,8 +13,12 @@ const experienceReducer = (
 ) => {
   switch (action.type) {
     case SET_EXPERIENCE: {
-      const id = generateRandomId();
-      return [...state, { ...action.payload, id: id }];
+      const id = action.payload.id ? action.payload.id : generateRandomId();
+      const exists = state.some((s) => s.id === id);
+      if (!exists) {
+        return [...state, { ...action.payload, id: id }];
+      }
+      return state;
     }
     //this was before id was introuced , rememember to change
     case DELETE_EXPERIENCE:
@@ -25,6 +29,8 @@ const experienceReducer = (
       return state.map((exp) =>
         exp.id === action.payload.id ? action.payload : exp
       );
+    case "RESET":
+      return initialState;
     default:
       return state;
   }

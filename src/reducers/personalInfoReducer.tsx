@@ -17,7 +17,8 @@ const personalInfoReducer = (
     case SET_PERSONAL_DETAILS:
       console.log(action.payload);
       return action.payload;
-
+    case "RESET":
+      return initialState;
     default:
       return state;
   }

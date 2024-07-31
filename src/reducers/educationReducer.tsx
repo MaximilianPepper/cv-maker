@@ -13,8 +13,12 @@ const educationReducer = (
 ) => {
   switch (action.type) {
     case SET_EDUCATION: {
-      const id = generateRandomId();
-      return [...state, { ...action.payload, id: id }];
+      const id = action.payload.id ? action.payload.id : generateRandomId();
+      const exists = state.some((s) => s.id === id);
+      if (!exists) {
+        return [...state, { ...action.payload, id: id }];
+      }
+      return state;
     }
     //this was before id was introuced , rememember to change
     case DELETE_EDUCATION:
@@ -25,6 +29,8 @@ const educationReducer = (
       return state.map((edu) =>
         edu.id === action.payload.id ? action.payload : edu
       );
+    case "RESET":
+      return initialState;
     default:
       return state;
   }

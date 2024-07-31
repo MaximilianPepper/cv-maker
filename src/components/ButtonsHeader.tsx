@@ -15,10 +15,13 @@ const ButtonsHeader = () => {
     templateExperience.map((e) => dispatch(setExperience(e)));
     templateEducation.map((e) => dispatch(setEducation(e)));
   };
+  const resetTemplate = () => {
+    dispatch({ type: "RESET" });
+  };
 
   return (
     <Box>
-      <Button variant="outlined" sx={{ mr: 2 }}>
+      <Button onClick={resetTemplate} variant="outlined" sx={{ mr: 2 }}>
         Clear
       </Button>
       <Button onClick={displayTemplate} variant="outlined">
